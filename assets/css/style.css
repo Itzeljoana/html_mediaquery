@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.grid-conteiner{
+    display: grid;
+    grid-template-areas:
+    "menu header"
+    "menu main"
+    "footer main"; 
+    grid-template-columns:2fr 10fr ; 
+    grid-template-rows: 1fr 10fr 1fr; 
+    height: 100vh;   
+}
+header{
+    grid-area: header;
+    background-color:#EAE7ED;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    padding:10px;     
+}
+.filtro-conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    font-size: 1rem;
+}
+label {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;  
+} 
+select {
+    font-size: 1rem;
+    padding: 3px;
+    width: 98%;
+    border: none;  
+    display: inline-block;
+}
+/* --------------------comiienza menu------------------------- */
+menu{
+    grid-area: menu;
+    background-color:#1E56A0;
+    color: white;
+    
+}
+.flex-colum{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4vh;
+    margin-top: 15px;
+}
+.flex-colum li{
+    list-style: none;
+    margin: 2vh;
+}
+.icon-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 2vh;
+}
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+main{
+    grid-area: main;
+    overflow: auto;
+    margin: 10px 10px 10px 10px;
+    
+}
+.grid-container{
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* height: 100%;   */
+    gap: 2vh;
+
+}
+.grid-item{
+    
+    border-radius: 8px;
+    border: 2px solid #EAE7ED;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 7px  #EAE7ED;
+    
+}
+.grid-item img{
+    width: 15vw;
+    display: block;
+    align-items: center;
+   
+}
+.button{
+    display: flex;
+    margin-bottom: 3vh;
+    justify-content: center;
+    background: #1E56A0;
+    height: 6vh;
+    width:  12vh;
+    align-items: center;
+    color: white;
+    border: #1E56A0;
+    border-radius: 5px;
+}
+  
+.pag ul{
+    margin-top: 5vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: row;
+}
+.pag li {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #EAE7ED;
+    
+}
+  
+.pag li a {
+    display: block;
+    text-decoration: none;
+    color: #5463FF;
+    
+}
+  
+.pag li a:hover {
+    background-color: #f0f0f0;
+}
+footer{
+    grid-area: footer;
+    background-color:#163172;
+    color: white ; 
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center; 
+}
+.footer-icon{
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+   
+}
+.footer-icon i{
+    margin: 2px;
+}
+.footer-p{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 10px;
+}
+/* ------------------------------AQUI COMIENZA CON MOBIL----------------------------- */
+@media (max-width: 576px){
+    .grid-conteiner{
+        display: grid;
+        grid-template-areas:
+        "menu"
+        "header"
+        "main"
+        "footer"; 
+        grid-template-columns:1fr; 
+        grid-template-rows: 1fr 1fr 8fr 1fr; 
+        height: 100vh;   
+    }
+    /* ----------------------------comienza menu----------------------------------- */
+    menu{
+        grid-area: menu;
+        background-color:#1E56A0;
+        color: white;
+        display: flex;  
+       
+    }
+    .flex-colum{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .flex-colum ul{
+        display: none;
+    }
+    .icon-menu{
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        gap: 2vh;
+        font-size: 30px;
+    }
+    .menu-icon {
+        display: block;
+        font-size: 50px;
+    }
+    /* ----------------------------comienza filtro----------------------------------- */
+    header{
+        grid-area: header;
+        
+    }
+    .filtro-conteiner{
+        width: 90%; 
+        font-size:2rem ; 
+    }
+    select {
+        font-size: 2.1rem;
+        width: 98%;
+    }
+    .option{
+        font-size: 0.5rem;
+    }
+    /* ----------------------------comienza cards----------------------------------- */
+    main{
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        margin:35px;
+      
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns:  1fr;
+        height: 100%;  
+       
+    }
+    .grid-item{
+        justify-content: space-evenly;
+    }
+    .grid-item:nth-child(n+2) {
+        display: none;
+    }
+    .bold{
+        font-size: 32px;
+        margin-bottom: -6vh;
+    }
+    .grid-item img{
+        width: 30vh;
+        display: block; 
+    }
+    .button{
+        margin: -3vh;
+        font-size: 32px;
+    } 
+    .pag{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -20px; /* COMO PUEDO MEJORAR EN ACOMODAR EL CAR Y EL PIE DE PAG, SEGUN LA MAQUETA */
+    }
+    .pag li{
+        font-size: 20px;
+        padding: 20px;
+    }
+    /* ----------------------------comienza pie de pagina----------------------------------- */
+    .footer-icon i{
+        font-size: 32px;
+    }
+    .footer-p{
+        width: 100%;
+        font-size: 22px;
+    }
+}
+
+/* ---------------------------AQUI COMIENZA CON 576PX PARA TABLET---------------------------------- */
+@media (min-width: 576px)  and (max-width: 992px) {
+
+    .grid-conteiner{
+        display: grid;
+        grid-template-areas:
+        "menu menu"
+        "header main"
+        "footer footer"; 
+        grid-template-columns:2fr 5fr; 
+        grid-template-rows: 1fr 6fr 1fr; 
+        height: 100vh;   
+    }
+    /* ----------------------------comienza menu--------------------------------------------- */
+    menu{
+        grid-area: menu;
+        background-color:#1E56A0;
+        color: white;
+        display: flex; 
+        
+    }
+    .flex-colum{
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        width: 100%;
+    }
+    .icon-menu {
+        justify-content: flex-start;
+        gap:1vh;
+    }
+    .flex-colum ul{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    /* ----------------------------cominenza filtro---------------------------------------- */
+    header{
+        grid-area: header;
+        justify-content: flex-start; 
+    }
+    .filtro-conteiner{
+        margin-top: 20px;
+        width: 60%; 
+        font-size:20px;
+        gap: 1vh; 
+    }
+    select {
+        font-size: 1.5rem;
+        width: 98%;       
+    }
+    .option{
+        font-size: 0.5rem;
+    }
+    /* ----------------------------cominenza card---------------------------------------- */
+    main{
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin:35px; 
+    }
+    .grid-container{
+        /* display: grid;
+        grid-template-columns: 1fr 1fr;   */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 350px;
+      
+    
+    }
+    .grid-item{
+        justify-content: center;
+    }
+    .grid-item:nth-child(n+3) {
+        display: none;
+    }
+     .bold{
+        font-size: 24px;
+        
+    }
+    .grid-item img{
+        width: 12vh;
+        display: block; 
+    }  
+    .button{
+        height: 4vh;
+        width: 9vh;
+        font-size: 22px;
+    } 
+    .pag li{
+        font-size: 20px;
+        padding: 20px;
+    }
+    /* ----------------------------comienza pie de pagina----------------------------------- */
+    .footer-icon i{
+        font-size: 32px;
+    }
+    .footer-p{
+        width: 100%;
+        font-size: 22px;
+    } 
+}   
+
+
+
+
+
